@@ -2,27 +2,35 @@
 // ma per i multipli di 3 stampi “Fizz” al posto del numero e per i multipli di 5 stampi Buzz.
 // Per i numeri che sono sia multipli di 3 che di 5 stampi FizzBuzz.
 
-var f = "Fizz";
-var b = "Buzz";
-var fb = f + b;
+
 
 for (var i = 1; i <= 100; i++) {
-    if ((i % 3 == 0) & (i % 5 == 0)) {
-        console.log(fb);
-        document.getElementById("display").innerHTML = fb;
-        continue;
-    } 
-    if (i % 3 == 0) {
-        console.log(f);
-        document.getElementById("display").innerHTML = f;
-        continue;
+    if ((i % 3 == 0) && (i % 5 == 0)) {
+        console.log('fizzbuzz');
+    } else if(i % 3 == 0) {
+        console.log('fizz');
+    } else if (i % 5 == 0) {
+        console.log('buzz');
+    } else{
+        console.log(i);
     }
-    if (i % 5 == 0) {
-        console.log(b);
-        document.getElementById("display").innerHTML = b;
-        continue;
+    
+}
+var listElement = document.getElementById("display");
+
+var listItems = '';
+
+for (var i = 1; i <= 100; i++) {
+    if ((i % 3 == 0) && (i % 5 == 0)) {
+        listItems += '<li>FizzBuzz</li>';  
+    } else if(i % 3 == 0) {
+        listItems += '<li>Fizz</li>';  
+    } else if (i % 5 == 0) {
+        listItems += '<li>Buzz</li>';  
+    } else{
+        listItems += '<li>' + i + '</li>';  
+
     }
-    console.log(i);
-    document.getElementById("display").innerHTML = i;
 }
 
+listElement.innerHTML = listItems;
